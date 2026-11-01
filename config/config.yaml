@@ -1,0 +1,118 @@
+testing:
+  # Set any two of the first three and the third is calculated
+  # (measurements_count = total_duration_seconds * sampling_frequency_hz).
+  sampling:
+    measurements_count: 20
+    total_duration_seconds: null
+    sampling_frequency_hz: 10
+    # Stop sampling an ammeter after this many failures in a row.
+    max_consecutive_failures: 5
+    # A reading is late when it starts more than this part of the interval
+    # after its time (0.5 is half an interval: 50 ms at 10 Hz).
+    late_tolerance: 0.5
+    # A run whose late readings are more than this share (0.1 is 10%) doesn't
+    # meet its timing: the report says so and main.py exits with code 1.
+    max_late_fraction: 0.1
+
+connection:
+  # The emulators listen on IPv4 only. On Windows and Mac "localhost" can mean
+  # IPv6 (::1) first, and every reading would wait ~2 s for that to fail.
+  host: 127.0.0.1
+  # For the whole exchange: connect, send and read the reply.
+  timeout_seconds: 2.0
+  # How many more tries after a network error.
+  retries: 3
+  # Wait before the first retry. It doubles after each one.
+  retry_backoff_seconds: 0.1
+
+# reference_current is optional: the true current, used to check for bias.
+# The emulators don't measure a real circuit, so here it's the average that
+# each emulator's random formula should give:
+#   greenlee: E[V] * E[1/R] = 5.5 * ln(1000) / 99.9     = 0.3803 A
+#   entes:    E[B] * E[k]   = 0.055 * 1250              = 68.75 A
+#   circutor: E[sum of 10 V] * E[dt] = 5.5 * 0.0055     = 0.03025 A
+ammeters:
+  greenlee:
+    port: 5000
+    command: "MEASURE_GREENLEE -get_measurement"
+    reference_current: 0.3803
+  entes:
+    port: 5001
+    command: "MEASURE_ENTES -get_data"
+    reference_current: 68.75
+  circutor:
+    port: 5002
+    command: "MEASURE_CIRCUTOR -get_measurement -current"
+    reference_current: 0.03025
+
+analysis:
+  # 0.90, 0.95 or 0.99, for the confidence interval of the mean.
+  confidence_level: 0.95
+  # A bias counts against an ammeter only when it's real and bigger than this
+  # (0.05 is 5%). Otherwise, with enough readings, even 1% would count.
+  bias_tolerance: 0.05
+  visualization:
+    enabled: true
+    plot_types: [timeseries, histogram, comparison, timing]
+    # One PNG per batch. Relative paths start from the project folder.
+    directory: results/plots
+
+result_management:
+  # One JSON file per result. Relative paths start from the project folder.
+  directory: results/runs
+
+# Fault simulation, used by the scenarios below. Everything is 0 (off) by default.
+simulation:
+  # The same seed gives the same faults every time. With null a random seed
+  # is used and saved with the results.
+  seed: 42
+  profiles:
+    flaky_network:
+      timeout_probability: 0.1
+      disconnect_probability: 0.05
+    bad_replies:
+      invalid_response_probability: 0.3
+    slow_device:
+      slow_probability: 0.3
+      # Longer than the 0.1 s between readings at 10 Hz, so readings start late.
+      slow_delay_seconds: 0.15
+    biased_meter:
+      # Every value 20% too high.
+      bias_relative: 0.2
+    noisy_spikes:
+      noise_relative: 0.05
+      spike_probability: 0.05
+      spike_factor: 10
+
+# Named tests. Run one with: python main.py --scenario NAME
+# Without ammeters it uses all of them, without sampling it uses
+# testing.sampling, and without plots it follows analysis.visualization.
+scenarios:
+  quick_check:
+    description: "10 readings from every ammeter"
+    sampling: {measurements_count: 10, sampling_frequency_hz: 10}
+  precision_study:
+    description: "200 readings each, for narrow confidence intervals"
+    sampling: {measurements_count: 200, sampling_frequency_hz: 50}
+  flaky_network:
+    description: "15% of readings fail with timeouts or dropped connections"
+    sampling: {total_duration_seconds: 3, sampling_frequency_hz: 20}
+    simulation: flaky_network
+  bad_replies:
+    description: "30% invalid replies from ENTES"
+    ammeters: [entes]
+    sampling: {measurements_count: 30, sampling_frequency_hz: 10}
+    simulation: bad_replies
+  slow_device:
+    description: "CIRCUTOR sometimes answers late: timing overruns"
+    ammeters: [circutor]
+    simulation: slow_device
+  biased_meter:
+    description: "ENTES reads 20% high: the accuracy assessment should find the bias"
+    ammeters: [entes]
+    sampling: {measurements_count: 400, sampling_frequency_hz: 50}
+    simulation: biased_meter
+  noisy_spikes:
+    description: "noise and occasional 10x spikes"
+    sampling: {measurements_count: 50, sampling_frequency_hz: 20}
+    simulation: noisy_spikes

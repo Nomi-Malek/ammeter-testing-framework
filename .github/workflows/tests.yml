@@ -1,0 +1,40 @@
+# Runs all the tests on Windows, Linux and Mac with every Python version we
+# support, to make sure the project works everywhere.
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      # Keep going after a failure, so we see every combination that fails.
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements*.txt
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Run the tests
+        run: python -m pytest -v -o faulthandler_timeout=120
+      - name: Run the demo
+        # On GitHub's virtual Mac machines a sleep returns 35-80 ms late, so a
+        # real run there can rightly end with "TIMING NOT MET" (exit code 1).
+        # That's the timing check working, so it doesn't fail the Mac job.
+        continue-on-error: ${{ matrix.os == 'macos-latest' }}
+        run: python main.py --scenario quick_check

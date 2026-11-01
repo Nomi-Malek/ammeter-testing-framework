@@ -1,0 +1,19 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Test and tool caches
+.pytest_cache/
+
+# Logs and results created on every run (curated examples go to sample_results/)
+results/logs/
+results/runs/
+results/plots/

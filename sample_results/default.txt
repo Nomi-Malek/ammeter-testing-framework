@@ -1,0 +1,38 @@
+
+Result 20261101T193048Z_greenlee_20521a7e (batch 20261101T193048Z_f297f6ef)
+greenlee: completed, 20/20 ok (100%), 9.9993 Hz achieved (planned 10 Hz), 0 overrun(s)
+                           mean     median        std        min        max      range         cv        sem
+  current (A)           0.17849   0.086815    0.22770   0.022212    0.91056    0.88835    127.6%    0.050916
+  reading time (ms)      8.1099     5.8614     6.2493     2.1879     24.281     22.094     77.1%      1.3974
+  lateness (ms)         0.98482    0.49250     1.6814   0.025600     7.3258     7.3002    170.7%     0.37597
+Saved: sample_results\runs\20261101T193048Z_greenlee_20521a7e.json
+
+Result 20261101T193048Z_entes_b6c9f945 (batch 20261101T193048Z_f297f6ef)
+entes: completed, 20/20 ok (100%), 9.9972 Hz achieved (planned 10 Hz), 0 overrun(s)
+                           mean     median        std        min        max      range         cv        sem
+  current (A)            60.775     46.933     37.184     14.630     137.84     123.21     61.2%      8.3146
+  reading time (ms)      8.6365     6.4603     7.2499     1.8706     27.789     25.919     83.9%      1.6211
+  lateness (ms)         0.72158    0.51325    0.69026   0.021300     2.5833     2.5620     95.7%     0.15435
+Saved: sample_results\runs\20261101T193048Z_entes_b6c9f945.json
+
+Result 20261101T193048Z_circutor_e80353dd (batch 20261101T193048Z_f297f6ef)
+circutor: completed, 20/20 ok (100%), 9.9936 Hz achieved (planned 10 Hz), 0 overrun(s)
+                           mean     median        std        min        max      range         cv        sem
+  current (A)          0.030463   0.028163   0.012663  0.0095336   0.059781   0.050247     41.6%   0.0028314
+  reading time (ms)      6.0094     5.5812     2.9725     1.8668     16.790     14.923     49.5%     0.66466
+  lateness (ms)          1.7130    0.57905     4.4463   0.015200     20.481     20.466    259.6%     0.99421
+Saved: sample_results\runs\20261101T193048Z_circutor_e80353dd.json
+
+Accuracy assessment
+#  ammeter              ok  mean (A)    median     cv        95% CI of mean    +/-  skew read cv late max     bias
+1  circutor          20/20   0.03046   0.02816  41.6%    [0.02454, 0.03639]  19.5%  0.54   49.5%   20.5ms    +0.7%
+2  entes             20/20     60.77     46.93  61.2%        [43.37, 78.18]  28.6%  1.04   83.9%    2.6ms   -11.6%
+3  greenlee          20/20    0.1785   0.08682 127.6%     [0.07192, 0.2851]  59.7%  2.37   77.1%    7.3ms  -53.1%?
+No clear winner: circutor is first in the table, but its difference from entes could be chance. More readings would tell them apart.
+Order: a bias beyond the tolerance first, then the success rate, then the relative width of the confidence interval; a difference that could be chance is a tie. Means of different ammeters are not comparable: they measure different currents.
+bias: mean vs the configured reference_current; * = statistically significant (expect about 5% false alarms); ? = outside the interval, but the data is too skewed to be sure.
+WARNING entes: readings are strongly skewed (skewness 1.0); with 20 readings the 95% interval may miss the true mean more often than 5% of the time. Look at the median too, or take more readings
+WARNING greenlee: readings are strongly skewed (skewness 2.4); with 20 readings the 95% interval may miss the true mean more often than 5% of the time. Look at the median too, or take more readings
+WARNING greenlee: the reference 0.3803 A is outside the 95% interval (-53.1%), but the readings are strongly skewed, so this may be a sampling effect, not a bias
+
+Chart saved: sample_results\plots\20261101T193048Z_f297f6ef.png

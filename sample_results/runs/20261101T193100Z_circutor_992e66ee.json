@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "id": "20261101T193100Z_circutor_992e66ee",
+  "batch_id": "20261101T193100Z_a68217ad",
+  "metadata": {
+    "started_at": "2026-11-01T19:31:00.608107+00:00",
+    "finished_at": "2026-11-01T19:31:03.567327+00:00",
+    "ammeter": {
+      "name": "circutor",
+      "host": "127.0.0.1",
+      "port": 5002,
+      "command": "MEASURE_CIRCUTOR -get_measurement -current"
+    },
+    "connection": {
+      "timeout_seconds": 2.0,
+      "retries": 3,
+      "retry_backoff_seconds": 0.1
+    },
+    "environment": {
+      "python": "3.12.3",
+      "os": "Windows 10"
+    },
+    "scenario": "flaky_network",
+    "simulation": {
+      "profile": "flaky_network",
+      "seed": 42,
+      "settings": {
+        "timeout_probability": 0.1,
+        "disconnect_probability": 0.05,
+        "invalid_response_probability": 0.0,
+        "slow_probability": 0.0,
+        "slow_delay_seconds": 0.2,
+        "spike_probability": 0.0,
+        "spike_factor": 10.0,
+        "noise_relative": 0.0,
+        "bias_relative": 0.0
+      },
+      "injected": {
+        "disconnect": 3,
+        "timeout": 8
+      }
+    }
+  },
+  "run": {
+    "ammeter": "circutor",
+    "started_at": "2026-11-01T19:31:00.608107+00:00",
+    "elapsed_s": 2.959220400080085,
+    "status": "completed",
+    "stop_reason": null,
+    "overruns": 0,
+    "plan": {
+      "count": 60,
+      "frequency_hz": 20.0,
+      "max_consecutive_failures": 5,
+      "late_tolerance": 0.5,
+      "max_late_fraction": 0.1
+    },
+    "samples": [
+      {
+        "index": 0,
+        "scheduled_s": 0.0,
+        "started_s": 9.00006853044033e-06,
+        "duration_s": 0.002640599966980517,
+        "value": 0.03364584209501572,
+        "error": null
+      },
+      {
+        "index": 1,
+        "scheduled_s": 0.05,
+        "started_s": 0.050241900025866926,
+        "duration_s": 0.016544200014322996,
+        "value": 0.042679248101767465,
+        "error": null
+      },
+      {
+        "index": 2,
+        "scheduled_s": 0.1,
+        "started_s": 0.10063410003203899,
+        "duration_s": 0.006252499995753169,
+        "value": 0.03461502826050447,
+        "error": null
+      },
+      {
+        "index": 3,
+        "scheduled_s": 0.15000000000000002,
+        "started_s": 0.1506184000754729,
+        "duration_s": 0.006875599967315793,
+        "value": 0.012411433782436004,
+        "error": null
+      },
+      {
+        "index": 4,
+        "scheduled_s": 0.2,
+        "started_s": 0.2008225000463426,
+        "duration_s": 5.350005812942982e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 5,
+        "scheduled_s": 0.25,
+        "started_s": 0.2503104000352323,
+        "duration_s": 0.006003499962389469,
+        "value": 0.04812707293180264,
+        "error": null
+      },
+      {
+        "index": 6,
+        "scheduled_s": 0.30000000000000004,
+        "started_s": 0.3005732001038268,
+        "duration_s": 0.004662699997425079,
+        "value": 0.025843560809120505,
+        "error": null
+      },
+      {
+        "index": 7,
+        "scheduled_s": 0.35000000000000003,
+        "started_s": 0.3504876000806689,
+        "duration_s": 0.007213399978354573,
+        "value": 0.012622456558771289,
+        "error": null
+      },
+      {
+        "index": 8,
+        "scheduled_s": 0.4,
+        "started_s": 0.40066830010619015,
+        "duration_s": 0.024427799973636866,
+        "value": 0.03052166618814765,
+        "error": null
+      },
+      {
+        "index": 9,
+        "scheduled_s": 0.45,
+        "started_s": 0.4508646000176668,
+        "duration_s": 5.1900045946240425e-05,
+        "value": null,
+        "error": "AmmeterConnectionError: circutor: simulated connection drop"
+      },
+      {
+        "index": 10,
+        "scheduled_s": 0.5,
+        "started_s": 0.5003590000560507,
+        "duration_s": 6.590003613382578e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 11,
+        "scheduled_s": 0.55,
+        "started_s": 0.5507622000295669,
+        "duration_s": 5.789997521787882e-05,
+        "value": null,
+        "error": "AmmeterConnectionError: circutor: simulated connection drop"
+      },
+      {
+        "index": 12,
+        "scheduled_s": 0.6000000000000001,
+        "started_s": 0.6002047000220045,
+        "duration_s": 0.0071090999990701675,
+        "value": 0.042830154998774135,
+        "error": null
+      },
+      {
+        "index": 13,
+        "scheduled_s": 0.65,
+        "started_s": 0.650095000048168,
+        "duration_s": 0.0243445000378415,
+        "value": 0.04543402631937742,
+        "error": null
+      },
+      {
+        "index": 14,
+        "scheduled_s": 0.7000000000000001,
+        "started_s": 0.70070830010809,
+        "duration_s": 0.019667699933052063,
+        "value": 0.010425943419570005,
+        "error": null
+      },
+      {
+        "index": 15,
+        "scheduled_s": 0.75,
+        "started_s": 0.7502468000166118,
+        "duration_s": 0.008528999984264374,
+        "value": 0.04363911629727401,
+        "error": null
+      },
+      {
+        "index": 16,
+        "scheduled_s": 0.8,
+        "started_s": 0.8006380000151694,
+        "duration_s": 0.006410200032405555,
+        "value": 0.03099008115990022,
+        "error": null
+      },
+      {
+        "index": 17,
+        "scheduled_s": 0.8500000000000001,
+        "started_s": 0.8502957000164315,
+        "duration_s": 0.007713700062595308,
+        "value": 0.050495517089899446,
+        "error": null
+      },
+      {
+        "index": 18,
+        "scheduled_s": 0.9,
+        "started_s": 0.9005157001083717,
+        "duration_s": 4.749989602714777e-05,
+        "value": null,
+        "error": "AmmeterConnectionError: circutor: simulated connection drop"
+      },
+      {
+        "index": 19,
+        "scheduled_s": 0.9500000000000001,
+        "started_s": 0.9506183000048622,
+        "duration_s": 0.006420799996703863,
+        "value": 0.01752130184276642,
+        "error": null
+      },
+      {
+        "index": 20,
+        "scheduled_s": 1.0,
+        "started_s": 1.0005479000974447,
+        "duration_s": 0.004104799940250814,
+        "value": 0.028608979370685152,
+        "error": null
+      },
+      {
+        "index": 21,
+        "scheduled_s": 1.05,
+        "started_s": 1.0501159999985248,
+        "duration_s": 4.090007860213518e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 22,
+        "scheduled_s": 1.1,
+        "started_s": 1.1007133000530303,
+        "duration_s": 0.008409200003370643,
+        "value": 0.034777839319525376,
+        "error": null
+      },
+      {
+        "index": 23,
+        "scheduled_s": 1.1500000000000001,
+        "started_s": 1.1507504000328481,
+        "duration_s": 0.00629679998382926,
+        "value": 0.054540011359088564,
+        "error": null
+      },
+      {
+        "index": 24,
+        "scheduled_s": 1.2000000000000002,
+        "started_s": 1.200813400093466,
+        "duration_s": 0.006711499998345971,
+        "value": 0.03652719349342351,
+        "error": null
+      },
+      {
+        "index": 25,
+        "scheduled_s": 1.25,
+        "started_s": 1.2507616000948474,
+        "duration_s": 0.0068818998988717794,
+        "value": 0.04669494761719754,
+        "error": null
+      },
+      {
+        "index": 26,
+        "scheduled_s": 1.3,
+        "started_s": 1.3002436000388116,
+        "duration_s": 0.008070099982433021,
+        "value": 0.015108856643340114,
+        "error": null
+      },
+      {
+        "index": 27,
+        "scheduled_s": 1.35,
+        "started_s": 1.3503267000196502,
+        "duration_s": 0.008022000081837177,
+        "value": 0.03412174628425962,
+        "error": null
+      },
+      {
+        "index": 28,
+        "scheduled_s": 1.4000000000000001,
+        "started_s": 1.400348600000143,
+        "duration_s": 0.008142600068822503,
+        "value": 0.010673328196318886,
+        "error": null
+      },
+      {
+        "index": 29,
+        "scheduled_s": 1.4500000000000002,
+        "started_s": 1.4509157000575215,
+        "duration_s": 0.006918699946254492,
+        "value": 0.041519234266142076,
+        "error": null
+      },
+      {
+        "index": 30,
+        "scheduled_s": 1.5,
+        "started_s": 1.5011015000054613,
+        "duration_s": 0.006439400021918118,
+        "value": 0.04688938535769561,
+        "error": null
+      },
+      {
+        "index": 31,
+        "scheduled_s": 1.55,
+        "started_s": 1.550649700104259,
+        "duration_s": 5.3299940191209316e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 32,
+        "scheduled_s": 1.6,
+        "started_s": 1.6004167000064626,
+        "duration_s": 0.00686150009278208,
+        "value": 0.005273146823763287,
+        "error": null
+      },
+      {
+        "index": 33,
+        "scheduled_s": 1.6500000000000001,
+        "started_s": 1.650474900030531,
+        "duration_s": 4.680000711232424e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 34,
+        "scheduled_s": 1.7000000000000002,
+        "started_s": 1.7004415000556037,
+        "duration_s": 6.820005364716053e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 35,
+        "scheduled_s": 1.75,
+        "started_s": 1.7509653000161052,
+        "duration_s": 4.9400026910007e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 36,
+        "scheduled_s": 1.8,
+        "started_s": 1.8005634000292048,
+        "duration_s": 0.007533199968747795,
+        "value": 0.04016592354977189,
+        "error": null
+      },
+      {
+        "index": 37,
+        "scheduled_s": 1.85,
+        "started_s": 1.8505027000792325,
+        "duration_s": 0.02495899994391948,
+        "value": 0.03943115693609259,
+        "error": null
+      },
+      {
+        "index": 38,
+        "scheduled_s": 1.9000000000000001,
+        "started_s": 1.9004806000739336,
+        "duration_s": 0.00811629998497665,
+        "value": 0.05506439835196727,
+        "error": null
+      },
+      {
+        "index": 39,
+        "scheduled_s": 1.9500000000000002,
+        "started_s": 1.950520500075072,
+        "duration_s": 0.007505299989134073,
+        "value": 0.029319413310625743,
+        "error": null
+      },
+      {
+        "index": 40,
+        "scheduled_s": 2.0,
+        "started_s": 2.0004727001069114,
+        "duration_s": 0.007776999962516129,
+        "value": 0.012442286273852585,
+        "error": null
+      },
+      {
+        "index": 41,
+        "scheduled_s": 2.0500000000000003,
+        "started_s": 2.0505942000309005,
+        "duration_s": 0.00789979996625334,
+        "value": 0.00855502671505829,
+        "error": null
+      },
+      {
+        "index": 42,
+        "scheduled_s": 2.1,
+        "started_s": 2.1007545000175014,
+        "duration_s": 0.00791200005915016,
+        "value": 0.054197645268612316,
+        "error": null
+      },
+      {
+        "index": 43,
+        "scheduled_s": 2.15,
+        "started_s": 2.1505915001034737,
+        "duration_s": 0.007080899900756776,
+        "value": 0.050322667263979735,
+        "error": null
+      },
+      {
+        "index": 44,
+        "scheduled_s": 2.2,
+        "started_s": 2.2004873000551015,
+        "duration_s": 0.006908899988047779,
+        "value": 0.05817190850715537,
+        "error": null
+      },
+      {
+        "index": 45,
+        "scheduled_s": 2.25,
+        "started_s": 2.250586700043641,
+        "duration_s": 0.005763900000602007,
+        "value": 0.03624378420186165,
+        "error": null
+      },
+      {
+        "index": 46,
+        "scheduled_s": 2.3000000000000003,
+        "started_s": 2.300275000045076,
+        "duration_s": 0.0062466999515891075,
+        "value": 0.041925409847521786,
+        "error": null
+      },
+      {
+        "index": 47,
+        "scheduled_s": 2.35,
+        "started_s": 2.3502366000320762,
+        "duration_s": 0.006464699981734157,
+        "value": 0.058636218429760203,
+        "error": null
+      },
+      {
+        "index": 48,
+        "scheduled_s": 2.4000000000000004,
+        "started_s": 2.4003668000223115,
+        "duration_s": 0.005815700045786798,
+        "value": 0.012660364372058265,
+        "error": null
+      },
+      {
+        "index": 49,
+        "scheduled_s": 2.45,
+        "started_s": 2.4513839000137523,
+        "duration_s": 0.006233600084669888,
+        "value": 0.050780187986015066,
+        "error": null
+      },
+      {
+        "index": 50,
+        "scheduled_s": 2.5,
+        "started_s": 2.5011813000310212,
+        "duration_s": 4.070007707923651e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: circutor: simulated timeout"
+      },
+      {
+        "index": 51,
+        "scheduled_s": 2.5500000000000003,
+        "started_s": 2.551177000044845,
+        "duration_s": 0.005870699998922646,
+        "value": 0.05230153114152322,
+        "error": null
+      },
+      {
+        "index": 52,
+        "scheduled_s": 2.6,
+        "started_s": 2.6003061000956222,
+        "duration_s": 0.007968299905769527,
+        "value": 0.02262349393368759,
+        "error": null
+      },
+      {
+        "index": 53,
+        "scheduled_s": 2.6500000000000004,
+        "started_s": 2.650575500098057,
+        "duration_s": 0.008531400002539158,
+        "value": 0.06331335295332458,
+        "error": null
+      },
+      {
+        "index": 54,
+        "scheduled_s": 2.7,
+        "started_s": 2.7003491000505164,
+        "duration_s": 0.008642600034363568,
+        "value": 0.04018471559673418,
+        "error": null
+      },
+      {
+        "index": 55,
+        "scheduled_s": 2.75,
+        "started_s": 2.750495500047691,
+        "duration_s": 0.0048479000106453896,
+        "value": 0.004407141224267542,
+        "error": null
+      },
+      {
+        "index": 56,
+        "scheduled_s": 2.8000000000000003,
+        "started_s": 2.800164300017059,
+        "duration_s": 0.016049200086854398,
+        "value": 0.03861530811987698,
+        "error": null
+      },
+      {
+        "index": 57,
+        "scheduled_s": 2.85,
+        "started_s": 2.8505832999944687,
+        "duration_s": 0.0075749000534415245,
+        "value": 0.043785704906909,
+        "error": null
+      },
+      {
+        "index": 58,
+        "scheduled_s": 2.9000000000000004,
+        "started_s": 2.90097300009802,
+        "duration_s": 0.006636600010097027,
+        "value": 0.012107253517552135,
+        "error": null
+      },
+      {
+        "index": 59,
+        "scheduled_s": 2.95,
+        "started_s": 2.9504659000085667,
+        "duration_s": 0.007730800076387823,
+        "value": 0.016271460012028078,
+        "error": null
+      }
+    ]
+  },
+  "analysis": {
+    "current": {
+      "count": 49,
+      "mean": 0.03424619328585313,
+      "median": 0.03652719349342351,
+      "std": 0.01627641193788608,
+      "min": 0.004407141224267542,
+      "max": 0.06331335295332458,
+      "range": 0.05890621172905704,
+      "cv": 0.47527653079648285,
+      "sem": 0.002325201705412297
+    },
+    "reading_time": {
+      "count": 60,
+      "mean": 7.038653335378815,
+      "median": 6.868550030048937,
+      "std": 5.610421242235395,
+      "min": 0.04070007707923651,
+      "max": 24.95899994391948,
+      "range": 24.918299866840243,
+      "cv": 0.7970873084536484,
+      "sem": 0.7243022678795338
+    },
+    "lateness": {
+      "count": 60,
+      "mean": 0.555798382265402,
+      "median": 0.534200086258263,
+      "std": 0.28095503408543493,
+      "min": 0.00900006853044033,
+      "max": 1.383900013752104,
+      "range": 1.3748999452216637,
+      "cv": 0.5054981141547741,
+      "sem": 0.03627113893486755
+    },
+    "success_rate": 0.8166666666666667
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "id": "20261101T193048Z_entes_b6c9f945",
+  "batch_id": "20261101T193048Z_f297f6ef",
+  "metadata": {
+    "started_at": "2026-11-01T19:30:48.367235+00:00",
+    "finished_at": "2026-11-01T19:30:50.274930+00:00",
+    "ammeter": {
+      "name": "entes",
+      "host": "127.0.0.1",
+      "port": 5001,
+      "command": "MEASURE_ENTES -get_data"
+    },
+    "connection": {
+      "timeout_seconds": 2.0,
+      "retries": 3,
+      "retry_backoff_seconds": 0.1
+    },
+    "environment": {
+      "python": "3.12.3",
+      "os": "Windows 10"
+    }
+  },
+  "run": {
+    "ammeter": "entes",
+    "started_at": "2026-11-01T19:30:48.367235+00:00",
+    "elapsed_s": 1.907694899942726,
+    "status": "completed",
+    "stop_reason": null,
+    "overruns": 0,
+    "plan": {
+      "count": 20,
+      "frequency_hz": 10.0,
+      "max_consecutive_failures": 5,
+      "late_tolerance": 0.5,
+      "max_late_fraction": 0.1
+    },
+    "samples": [
+      {
+        "index": 0,
+        "scheduled_s": 0.0,
+        "started_s": 2.129992935806513e-05,
+        "duration_s": 0.0277894000755623,
+        "value": 57.07401983929089,
+        "error": null
+      },
+      {
+        "index": 1,
+        "scheduled_s": 0.1,
+        "started_s": 0.10037180001381785,
+        "duration_s": 0.004078899975866079,
+        "value": 130.6363151363614,
+        "error": null
+      },
+      {
+        "index": 2,
+        "scheduled_s": 0.2,
+        "started_s": 0.20048799994401634,
+        "duration_s": 0.006835700012743473,
+        "value": 130.32163925199293,
+        "error": null
+      },
+      {
+        "index": 3,
+        "scheduled_s": 0.30000000000000004,
+        "started_s": 0.3003987999400124,
+        "duration_s": 0.00473090005107224,
+        "value": 14.629923423292281,
+        "error": null
+      },
+      {
+        "index": 4,
+        "scheduled_s": 0.4,
+        "started_s": 0.40017519996035844,
+        "duration_s": 0.017270599957555532,
+        "value": 65.86515042068642,
+        "error": null
+      },
+      {
+        "index": 5,
+        "scheduled_s": 0.5,
+        "started_s": 0.5008039999520406,
+        "duration_s": 0.006443000049330294,
+        "value": 51.04532116597684,
+        "error": null
+      },
+      {
+        "index": 6,
+        "scheduled_s": 0.6000000000000001,
+        "started_s": 0.6008797999238595,
+        "duration_s": 0.006385400076396763,
+        "value": 23.49790968815123,
+        "error": null
+      },
+      {
+        "index": 7,
+        "scheduled_s": 0.7000000000000001,
+        "started_s": 0.7004982000216842,
+        "duration_s": 0.004079599981196225,
+        "value": 32.55647818134618,
+        "error": null
+      },
+      {
+        "index": 8,
+        "scheduled_s": 0.8,
+        "started_s": 0.8025832999264821,
+        "duration_s": 0.0018706000410020351,
+        "value": 90.6133559487202,
+        "error": null
+      },
+      {
+        "index": 9,
+        "scheduled_s": 0.9,
+        "started_s": 0.9025218000169843,
+        "duration_s": 0.0023348999675363302,
+        "value": 71.64533606340534,
+        "error": null
+      },
+      {
+        "index": 10,
+        "scheduled_s": 1.0,
+        "started_s": 1.0005282999482006,
+        "duration_s": 0.004275999963283539,
+        "value": 59.78807014259464,
+        "error": null
+      },
+      {
+        "index": 11,
+        "scheduled_s": 1.1,
+        "started_s": 1.1004220999311656,
+        "duration_s": 0.005616700043901801,
+        "value": 38.719551910413955,
+        "error": null
+      },
+      {
+        "index": 12,
+        "scheduled_s": 1.2000000000000002,
+        "started_s": 1.20022290002089,
+        "duration_s": 0.027569899917580187,
+        "value": 39.00730960017254,
+        "error": null
+      },
+      {
+        "index": 13,
+        "scheduled_s": 1.3,
+        "started_s": 1.300958800013177,
+        "duration_s": 0.008590899989940226,
+        "value": 137.84103608990145,
+        "error": null
+      },
+      {
+        "index": 14,
+        "scheduled_s": 1.4000000000000001,
+        "started_s": 1.4005621999967843,
+        "duration_s": 0.009064999991096556,
+        "value": 34.42759329429828,
+        "error": null
+      },
+      {
+        "index": 15,
+        "scheduled_s": 1.5,
+        "started_s": 1.500455699977465,
+        "duration_s": 0.006741399993188679,
+        "value": 35.495609630898834,
+        "error": null
+      },
+      {
+        "index": 16,
+        "scheduled_s": 1.6,
+        "started_s": 1.6005298999371007,
+        "duration_s": 0.008833599975332618,
+        "value": 42.820940711391664,
+        "error": null
+      },
+      {
+        "index": 17,
+        "scheduled_s": 1.7000000000000002,
+        "started_s": 1.7012748999986798,
+        "duration_s": 0.007399699999950826,
+        "value": 27.64626402422612,
+        "error": null
+      },
+      {
+        "index": 18,
+        "scheduled_s": 1.8,
+        "started_s": 1.8001774000003934,
+        "duration_s": 0.006340199965052307,
+        "value": 92.27926103615481,
+        "error": null
+      },
+      {
+        "index": 19,
+        "scheduled_s": 1.9000000000000001,
+        "started_s": 1.9005571999587119,
+        "duration_s": 0.006477599963545799,
+        "value": 39.57992873317577,
+        "error": null
+      }
+    ]
+  },
+  "analysis": {
+    "current": {
+      "count": 20,
+      "mean": 60.77455071462259,
+      "median": 46.93313093868425,
+      "std": 37.18418278582327,
+      "min": 14.629923423292281,
+      "max": 137.84103608990145,
+      "range": 123.21111266660917,
+      "cv": 0.6118380530763283,
+      "sem": 8.314636039687832
+    },
+    "reading_time": {
+      "count": 20,
+      "mean": 8.63649999955669,
+      "median": 6.460300006438047,
+      "std": 7.249927822157939,
+      "min": 1.8706000410020351,
+      "max": 27.7894000755623,
+      "range": 25.918800034560263,
+      "cv": 0.839452072312867,
+      "sem": 1.6211331442312156
+    },
+    "lateness": {
+      "count": 20,
+      "mean": 0.7215799705590455,
+      "median": 0.5132499849423433,
+      "std": 0.6902587627179652,
+      "min": 0.02129992935806513,
+      "max": 2.5832999264820966,
+      "range": 2.5619999971240315,
+      "cv": 0.9565935736591826,
+      "sem": 0.15434655155022675
+    },
+    "success_rate": 1.0
+  }
+}

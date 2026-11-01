@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "id": "20261101T193100Z_entes_6149aae2",
+  "batch_id": "20261101T193100Z_a68217ad",
+  "metadata": {
+    "started_at": "2026-11-01T19:31:00.607129+00:00",
+    "finished_at": "2026-11-01T19:31:03.567475+00:00",
+    "ammeter": {
+      "name": "entes",
+      "host": "127.0.0.1",
+      "port": 5001,
+      "command": "MEASURE_ENTES -get_data"
+    },
+    "connection": {
+      "timeout_seconds": 2.0,
+      "retries": 3,
+      "retry_backoff_seconds": 0.1
+    },
+    "environment": {
+      "python": "3.12.3",
+      "os": "Windows 10"
+    },
+    "scenario": "flaky_network",
+    "simulation": {
+      "profile": "flaky_network",
+      "seed": 42,
+      "settings": {
+        "timeout_probability": 0.1,
+        "disconnect_probability": 0.05,
+        "invalid_response_probability": 0.0,
+        "slow_probability": 0.0,
+        "slow_delay_seconds": 0.2,
+        "spike_probability": 0.0,
+        "spike_factor": 10.0,
+        "noise_relative": 0.0,
+        "bias_relative": 0.0
+      },
+      "injected": {
+        "disconnect": 2,
+        "timeout": 2
+      }
+    }
+  },
+  "run": {
+    "ammeter": "entes",
+    "started_at": "2026-11-01T19:31:00.607129+00:00",
+    "elapsed_s": 2.9603459000354633,
+    "status": "completed",
+    "stop_reason": null,
+    "overruns": 0,
+    "plan": {
+      "count": 60,
+      "frequency_hz": 20.0,
+      "max_consecutive_failures": 5,
+      "late_tolerance": 0.5,
+      "max_late_fraction": 0.1
+    },
+    "samples": [
+      {
+        "index": 0,
+        "scheduled_s": 0.0,
+        "started_s": 1.3499986380338669e-05,
+        "duration_s": 0.0037211000453680754,
+        "value": 66.18535225591825,
+        "error": null
+      },
+      {
+        "index": 1,
+        "scheduled_s": 0.05,
+        "started_s": 0.05055489996448159,
+        "duration_s": 0.002889299998059869,
+        "value": 35.96924854819524,
+        "error": null
+      },
+      {
+        "index": 2,
+        "scheduled_s": 0.1,
+        "started_s": 0.10015529999509454,
+        "duration_s": 0.0074112999718636274,
+        "value": 119.38084732976624,
+        "error": null
+      },
+      {
+        "index": 3,
+        "scheduled_s": 0.15000000000000002,
+        "started_s": 0.15099540003575385,
+        "duration_s": 0.00593390001449734,
+        "value": 122.39029249289709,
+        "error": null
+      },
+      {
+        "index": 4,
+        "scheduled_s": 0.2,
+        "started_s": 0.20154080004431307,
+        "duration_s": 0.004835099913179874,
+        "value": 108.93039370736285,
+        "error": null
+      },
+      {
+        "index": 5,
+        "scheduled_s": 0.25,
+        "started_s": 0.2510017999447882,
+        "duration_s": 0.006769500090740621,
+        "value": 119.00231526631086,
+        "error": null
+      },
+      {
+        "index": 6,
+        "scheduled_s": 0.30000000000000004,
+        "started_s": 0.3002033999655396,
+        "duration_s": 5.3900061175227165e-05,
+        "value": null,
+        "error": "AmmeterConnectionError: entes: simulated connection drop"
+      },
+      {
+        "index": 7,
+        "scheduled_s": 0.35000000000000003,
+        "started_s": 0.35088789998553693,
+        "duration_s": 0.007490399992093444,
+        "value": 75.7190870234889,
+        "error": null
+      },
+      {
+        "index": 8,
+        "scheduled_s": 0.4,
+        "started_s": 0.40136210003402084,
+        "duration_s": 4.1899969801306725e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: entes: simulated timeout"
+      },
+      {
+        "index": 9,
+        "scheduled_s": 0.45,
+        "started_s": 0.45157659996766597,
+        "duration_s": 0.004921299987472594,
+        "value": 162.01716148871606,
+        "error": null
+      },
+      {
+        "index": 10,
+        "scheduled_s": 0.5,
+        "started_s": 0.5010579000227153,
+        "duration_s": 0.0049498999724164605,
+        "value": 27.89936381698616,
+        "error": null
+      },
+      {
+        "index": 11,
+        "scheduled_s": 0.55,
+        "started_s": 0.5508303999667987,
+        "duration_s": 0.0060758000472560525,
+        "value": 91.22827185129951,
+        "error": null
+      },
+      {
+        "index": 12,
+        "scheduled_s": 0.6000000000000001,
+        "started_s": 0.6002179000061005,
+        "duration_s": 0.009441899950616062,
+        "value": 109.50879822537783,
+        "error": null
+      },
+      {
+        "index": 13,
+        "scheduled_s": 0.65,
+        "started_s": 0.6503809000132605,
+        "duration_s": 0.024666600045748055,
+        "value": 17.696640493443635,
+        "error": null
+      },
+      {
+        "index": 14,
+        "scheduled_s": 0.7000000000000001,
+        "started_s": 0.7013921999605373,
+        "duration_s": 0.00503460003528744,
+        "value": 99.2772113435635,
+        "error": null
+      },
+      {
+        "index": 15,
+        "scheduled_s": 0.75,
+        "started_s": 0.7508096999954432,
+        "duration_s": 0.007656999980099499,
+        "value": 64.52283436464464,
+        "error": null
+      },
+      {
+        "index": 16,
+        "scheduled_s": 0.8,
+        "started_s": 0.8002270000288263,
+        "duration_s": 0.0060063999844715,
+        "value": 65.44122197767044,
+        "error": null
+      },
+      {
+        "index": 17,
+        "scheduled_s": 0.8500000000000001,
+        "started_s": 0.8506607000017539,
+        "duration_s": 0.0066992000211030245,
+        "value": 91.65735031116552,
+        "error": null
+      },
+      {
+        "index": 18,
+        "scheduled_s": 0.9,
+        "started_s": 0.9005435999715701,
+        "duration_s": 0.006116700009442866,
+        "value": 9.328602498835512,
+        "error": null
+      },
+      {
+        "index": 19,
+        "scheduled_s": 0.9500000000000001,
+        "started_s": 0.9505957999499515,
+        "duration_s": 0.007342800032347441,
+        "value": 164.76541087997637,
+        "error": null
+      },
+      {
+        "index": 20,
+        "scheduled_s": 1.0,
+        "started_s": 1.000188000034541,
+        "duration_s": 0.01831099996343255,
+        "value": 165.2814760044287,
+        "error": null
+      },
+      {
+        "index": 21,
+        "scheduled_s": 1.05,
+        "started_s": 1.0508372000185773,
+        "duration_s": 0.0037315000081434846,
+        "value": 98.38247144310597,
+        "error": null
+      },
+      {
+        "index": 22,
+        "scheduled_s": 1.1,
+        "started_s": 1.1012808999512345,
+        "duration_s": 0.006376000004820526,
+        "value": 33.87354005785658,
+        "error": null
+      },
+      {
+        "index": 23,
+        "scheduled_s": 1.1500000000000001,
+        "started_s": 1.1506604000460356,
+        "duration_s": 0.007134699961170554,
+        "value": 16.93899661703943,
+        "error": null
+      },
+      {
+        "index": 24,
+        "scheduled_s": 1.2000000000000002,
+        "started_s": 1.201391899958253,
+        "duration_s": 0.0053001000778749585,
+        "value": 60.650567331020696,
+        "error": null
+      },
+      {
+        "index": 25,
+        "scheduled_s": 1.25,
+        "started_s": 1.2511589999776334,
+        "duration_s": 0.007152399979531765,
+        "value": 29.461198052172026,
+        "error": null
+      },
+      {
+        "index": 26,
+        "scheduled_s": 1.3,
+        "started_s": 1.3007907000137493,
+        "duration_s": 0.005986599950119853,
+        "value": 19.01008248034471,
+        "error": null
+      },
+      {
+        "index": 27,
+        "scheduled_s": 1.35,
+        "started_s": 1.3507094000233337,
+        "duration_s": 0.008406799985095859,
+        "value": 23.62460278211126,
+        "error": null
+      },
+      {
+        "index": 28,
+        "scheduled_s": 1.4000000000000001,
+        "started_s": 1.4007453999947757,
+        "duration_s": 0.005609599989838898,
+        "value": 184.1982814791268,
+        "error": null
+      },
+      {
+        "index": 29,
+        "scheduled_s": 1.4500000000000002,
+        "started_s": 1.4513512999983504,
+        "duration_s": 0.007989399950020015,
+        "value": 74.74596928189149,
+        "error": null
+      },
+      {
+        "index": 30,
+        "scheduled_s": 1.5,
+        "started_s": 1.5006423000013456,
+        "duration_s": 6.520003080368042e-05,
+        "value": null,
+        "error": "AmmeterTimeoutError: entes: simulated timeout"
+      },
+      {
+        "index": 31,
+        "scheduled_s": 1.55,
+        "started_s": 1.5514164000051096,
+        "duration_s": 0.00570119998883456,
+        "value": 179.902474377096,
+        "error": null
+      },
+      {
+        "index": 32,
+        "scheduled_s": 1.6,
+        "started_s": 1.6004886999726295,
+        "duration_s": 0.026698300032876432,
+        "value": 11.417659580634323,
+        "error": null
+      },
+      {
+        "index": 33,
+        "scheduled_s": 1.6500000000000001,
+        "started_s": 1.650491000036709,
+        "duration_s": 0.00671320001129061,
+        "value": 136.39803236224597,
+        "error": null
+      },
+      {
+        "index": 34,
+        "scheduled_s": 1.7000000000000002,
+        "started_s": 1.7014434000011533,
+        "duration_s": 0.005856300005689263,
+        "value": 18.60679747630731,
+        "error": null
+      },
+      {
+        "index": 35,
+        "scheduled_s": 1.75,
+        "started_s": 1.750275900005363,
+        "duration_s": 0.016000499948859215,
+        "value": 27.36128192036791,
+        "error": null
+      },
+      {
+        "index": 36,
+        "scheduled_s": 1.8,
+        "started_s": 1.8004797999747097,
+        "duration_s": 0.006999199977144599,
+        "value": 86.78587345979439,
+        "error": null
+      },
+      {
+        "index": 37,
+        "scheduled_s": 1.85,
+        "started_s": 1.850493900012225,
+        "duration_s": 0.007095600012689829,
+        "value": 22.64701436405554,
+        "error": null
+      },
+      {
+        "index": 38,
+        "scheduled_s": 1.9000000000000001,
+        "started_s": 1.9003882999531925,
+        "duration_s": 0.006690000067465007,
+        "value": 21.37376267329644,
+        "error": null
+      },
+      {
+        "index": 39,
+        "scheduled_s": 1.9500000000000002,
+        "started_s": 1.9504769999766722,
+        "duration_s": 0.008314299979247153,
+        "value": 144.38521125737415,
+        "error": null
+      },
+      {
+        "index": 40,
+        "scheduled_s": 2.0,
+        "started_s": 2.0009059000294656,
+        "duration_s": 0.008427200024016201,
+        "value": 55.73589079077271,
+        "error": null
+      },
+      {
+        "index": 41,
+        "scheduled_s": 2.0500000000000003,
+        "started_s": 2.0504023999674246,
+        "duration_s": 0.008837100001983345,
+        "value": 41.85725746739826,
+        "error": null
+      },
+      {
+        "index": 42,
+        "scheduled_s": 2.1,
+        "started_s": 2.1012202999554574,
+        "duration_s": 0.007180800079368055,
+        "value": 22.394326168837683,
+        "error": null
+      },
+      {
+        "index": 43,
+        "scheduled_s": 2.15,
+        "started_s": 2.1502150000305846,
+        "duration_s": 0.0071962999645620584,
+        "value": 27.889113395427977,
+        "error": null
+      },
+      {
+        "index": 44,
+        "scheduled_s": 2.2,
+        "started_s": 2.2005400999914855,
+        "duration_s": 0.007530500064603984,
+        "value": 72.29627007892181,
+        "error": null
+      },
+      {
+        "index": 45,
+        "scheduled_s": 2.25,
+        "started_s": 2.250200600014068,
+        "duration_s": 0.0057200000155717134,
+        "value": 78.10823218528316,
+        "error": null
+      },
+      {
+        "index": 46,
+        "scheduled_s": 2.3000000000000003,
+        "started_s": 2.300688200048171,
+        "duration_s": 0.007857899996452034,
+        "value": 112.70262074093894,
+        "error": null
+      },
+      {
+        "index": 47,
+        "scheduled_s": 2.35,
+        "started_s": 2.350637700059451,
+        "duration_s": 0.007158199907280505,
+        "value": 36.61206905120522,
+        "error": null
+      },
+      {
+        "index": 48,
+        "scheduled_s": 2.4000000000000004,
+        "started_s": 2.4007684000534937,
+        "duration_s": 4.179996903985739e-05,
+        "value": null,
+        "error": "AmmeterConnectionError: entes: simulated connection drop"
+      },
+      {
+        "index": 49,
+        "scheduled_s": 2.45,
+        "started_s": 2.4512703999644145,
+        "duration_s": 0.007397499983198941,
+        "value": 26.680595701428075,
+        "error": null
+      },
+      {
+        "index": 50,
+        "scheduled_s": 2.5,
+        "started_s": 2.500186200020835,
+        "duration_s": 0.005841000005602837,
+        "value": 89.17005759156001,
+        "error": null
+      },
+      {
+        "index": 51,
+        "scheduled_s": 2.5500000000000003,
+        "started_s": 2.5511299000354484,
+        "duration_s": 0.007882599951699376,
+        "value": 18.49053838297391,
+        "error": null
+      },
+      {
+        "index": 52,
+        "scheduled_s": 2.6,
+        "started_s": 2.6007259000325575,
+        "duration_s": 0.008287900011055171,
+        "value": 26.538356513963677,
+        "error": null
+      },
+      {
+        "index": 53,
+        "scheduled_s": 2.6500000000000004,
+        "started_s": 2.6509962000418454,
+        "duration_s": 0.007810499984771013,
+        "value": 13.100007160838423,
+        "error": null
+      },
+      {
+        "index": 54,
+        "scheduled_s": 2.7,
+        "started_s": 2.7007551999995485,
+        "duration_s": 0.008929500007070601,
+        "value": 140.17573473597494,
+        "error": null
+      },
+      {
+        "index": 55,
+        "scheduled_s": 2.75,
+        "started_s": 2.7505610999651253,
+        "duration_s": 0.018145499983802438,
+        "value": 53.97400320475985,
+        "error": null
+      },
+      {
+        "index": 56,
+        "scheduled_s": 2.8000000000000003,
+        "started_s": 2.8005828999448568,
+        "duration_s": 0.006800000090152025,
+        "value": 22.050623112757812,
+        "error": null
+      },
+      {
+        "index": 57,
+        "scheduled_s": 2.85,
+        "started_s": 2.850498100044206,
+        "duration_s": 0.008767099934630096,
+        "value": 10.65745555839824,
+        "error": null
+      },
+      {
+        "index": 58,
+        "scheduled_s": 2.9000000000000004,
+        "started_s": 2.901736499974504,
+        "duration_s": 0.008100299979560077,
+        "value": 24.42977837757379,
+        "error": null
+      },
+      {
+        "index": 59,
+        "scheduled_s": 2.95,
+        "started_s": 2.950919699971564,
+        "duration_s": 0.008011900004930794,
+        "value": 35.625034169213805,
+        "error": null
+      }
+    ]
+  },
+  "analysis": {
+    "current": {
+      "count": 56,
+      "mean": 68.11524395114493,
+      "median": 58.1932290608967,
+      "std": 50.418348307650135,
+      "min": 9.328602498835512,
+      "max": 184.1982814791268,
+      "range": 174.86967898029127,
+      "cv": 0.7401918481538766,
+      "sem": 6.737435191937878
+    },
+    "reading_time": {
+      "count": 60,
+      "mean": 7.5019016667890055,
+      "median": 7.1151499869301915,
+      "std": 4.718546734133789,
+      "min": 0.04179996903985739,
+      "max": 26.698300032876432,
+      "range": 26.656500063836575,
+      "cv": 0.6289800831464964,
+      "sem": 0.6091617639867187
+    },
+    "lateness": {
+      "count": 60,
+      "mean": 0.7609899990104467,
+      "median": 0.6988000357521784,
+      "std": 0.4213117590300365,
+      "min": 0.013499986380338669,
+      "max": 1.736499974503758,
+      "range": 1.7229999881234193,
+      "cv": 0.553636394141696,
+      "sem": 0.05439111420948945
+    },
+    "success_rate": 0.9333333333333333
+  }
+}

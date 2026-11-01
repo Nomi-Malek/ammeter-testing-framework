@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "id": "20261101T193048Z_greenlee_20521a7e",
+  "batch_id": "20261101T193048Z_f297f6ef",
+  "metadata": {
+    "started_at": "2026-11-01T19:30:48.365992+00:00",
+    "finished_at": "2026-11-01T19:30:50.271962+00:00",
+    "ammeter": {
+      "name": "greenlee",
+      "host": "127.0.0.1",
+      "port": 5000,
+      "command": "MEASURE_GREENLEE -get_measurement"
+    },
+    "connection": {
+      "timeout_seconds": 2.0,
+      "retries": 3,
+      "retry_backoff_seconds": 0.1
+    },
+    "environment": {
+      "python": "3.12.3",
+      "os": "Windows 10"
+    }
+  },
+  "run": {
+    "ammeter": "greenlee",
+    "started_at": "2026-11-01T19:30:48.365992+00:00",
+    "elapsed_s": 1.9059697000775486,
+    "status": "completed",
+    "stop_reason": null,
+    "overruns": 0,
+    "plan": {
+      "count": 20,
+      "frequency_hz": 10.0,
+      "max_consecutive_failures": 5,
+      "late_tolerance": 0.5,
+      "max_late_fraction": 0.1
+    },
+    "samples": [
+      {
+        "index": 0,
+        "scheduled_s": 0.0,
+        "started_s": 2.5600078515708447e-05,
+        "duration_s": 0.006516499910503626,
+        "value": 0.08822538523924847,
+        "error": null
+      },
+      {
+        "index": 1,
+        "scheduled_s": 0.1,
+        "started_s": 0.10049420001450926,
+        "duration_s": 0.021925900015048683,
+        "value": 0.033124993025548125,
+        "error": null
+      },
+      {
+        "index": 2,
+        "scheduled_s": 0.2,
+        "started_s": 0.20032110007014126,
+        "duration_s": 0.005257199984043837,
+        "value": 0.07156584700020764,
+        "error": null
+      },
+      {
+        "index": 3,
+        "scheduled_s": 0.30000000000000004,
+        "started_s": 0.3005187000380829,
+        "duration_s": 0.024281400023028255,
+        "value": 0.910563531160499,
+        "error": null
+      },
+      {
+        "index": 4,
+        "scheduled_s": 0.4,
+        "started_s": 0.40033049997873604,
+        "duration_s": 0.0057094000512734056,
+        "value": 0.18520673840134558,
+        "error": null
+      },
+      {
+        "index": 5,
+        "scheduled_s": 0.5,
+        "started_s": 0.5006240999791771,
+        "duration_s": 0.004989600041881204,
+        "value": 0.08301359148773368,
+        "error": null
+      },
+      {
+        "index": 6,
+        "scheduled_s": 0.6000000000000001,
+        "started_s": 0.6010024000424892,
+        "duration_s": 0.005945299984887242,
+        "value": 0.08540557149766356,
+        "error": null
+      },
+      {
+        "index": 7,
+        "scheduled_s": 0.7000000000000001,
+        "started_s": 0.7002789999824017,
+        "duration_s": 0.004869100055657327,
+        "value": 0.022212406941741706,
+        "error": null
+      },
+      {
+        "index": 8,
+        "scheduled_s": 0.8,
+        "started_s": 0.8073258000658825,
+        "duration_s": 0.002187900012359023,
+        "value": 0.14211203778866682,
+        "error": null
+      },
+      {
+        "index": 9,
+        "scheduled_s": 0.9,
+        "started_s": 0.9037671000696719,
+        "duration_s": 0.002719299984164536,
+        "value": 0.046651275620147856,
+        "error": null
+      },
+      {
+        "index": 10,
+        "scheduled_s": 1.0,
+        "started_s": 1.0001839000033215,
+        "duration_s": 0.00636360002681613,
+        "value": 0.4759213912057578,
+        "error": null
+      },
+      {
+        "index": 11,
+        "scheduled_s": 1.1,
+        "started_s": 1.10049079998862,
+        "duration_s": 0.02038090000860393,
+        "value": 0.03918612909052785,
+        "error": null
+      },
+      {
+        "index": 12,
+        "scheduled_s": 1.2000000000000002,
+        "started_s": 1.200636800029315,
+        "duration_s": 0.005685199983417988,
+        "value": 0.1391414974302291,
+        "error": null
+      },
+      {
+        "index": 13,
+        "scheduled_s": 1.3,
+        "started_s": 1.300431500072591,
+        "duration_s": 0.0067251999862492085,
+        "value": 0.13542794666454275,
+        "error": null
+      },
+      {
+        "index": 14,
+        "scheduled_s": 1.4000000000000001,
+        "started_s": 1.401050699991174,
+        "duration_s": 0.006965800072066486,
+        "value": 0.0823156630072407,
+        "error": null
+      },
+      {
+        "index": 15,
+        "scheduled_s": 1.5,
+        "started_s": 1.500531499972567,
+        "duration_s": 0.005777500104159117,
+        "value": 0.20080202696246574,
+        "error": null
+      },
+      {
+        "index": 16,
+        "scheduled_s": 1.6,
+        "started_s": 1.6004888999741524,
+        "duration_s": 0.00833550002425909,
+        "value": 0.611661980218417,
+        "error": null
+      },
+      {
+        "index": 17,
+        "scheduled_s": 1.7000000000000002,
+        "started_s": 1.7004833000246435,
+        "duration_s": 0.006502700038254261,
+        "value": 0.12885396006073052,
+        "error": null
+      },
+      {
+        "index": 18,
+        "scheduled_s": 1.8,
+        "started_s": 1.8005514000542462,
+        "duration_s": 0.0055229999125003815,
+        "value": 0.03128496126646218,
+        "error": null
+      },
+      {
+        "index": 19,
+        "scheduled_s": 1.9000000000000001,
+        "started_s": 1.9001590000698343,
+        "duration_s": 0.005536699900403619,
+        "value": 0.05714483835345162,
+        "error": null
+      }
+    ]
+  },
+  "analysis": {
+    "current": {
+      "count": 20,
+      "mean": 0.1784910886211314,
+      "median": 0.08681547836845602,
+      "std": 0.22770165442593523,
+      "min": 0.022212406941741706,
+      "max": 0.910563531160499,
+      "range": 0.8883511242187573,
+      "cv": 1.2757032084064384,
+      "sem": 0.0509156377885557
+    },
+    "reading_time": {
+      "count": 20,
+      "mean": 8.109885005978867,
+      "median": 5.8614000445231795,
+      "std": 6.249259801567785,
+      "min": 2.187900012359023,
+      "max": 24.281400023028255,
+      "range": 22.09350001066923,
+      "cv": 0.7705731705148261,
+      "sem": 1.3973769725362413
+    },
+    "lateness": {
+      "count": 20,
+      "mean": 0.9848150250035672,
+      "median": 0.49250000156457474,
+      "std": 1.6813903550003877,
+      "min": 0.025600078515708447,
+      "max": 7.32580006588246,
+      "range": 7.300199987366751,
+      "cv": 1.7073159043184758,
+      "sem": 0.37597031304933703
+    },
+    "success_rate": 1.0
+  }
+}

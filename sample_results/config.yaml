@@ -1,0 +1,102 @@
+# The config used to produce these sample results: config/config.yaml with
+# results and charts written to sample_results/ instead of results/.
+testing:
+  sampling:
+    measurements_count: 20
+    total_duration_seconds: null
+    sampling_frequency_hz: 10
+    max_consecutive_failures: 5
+    late_tolerance: 0.5
+    max_late_fraction: 0.1
+connection:
+  host: 127.0.0.1
+  timeout_seconds: 2.0
+  retries: 3
+  retry_backoff_seconds: 0.1
+ammeters:
+  greenlee:
+    port: 5000
+    command: MEASURE_GREENLEE -get_measurement
+    reference_current: 0.3803
+  entes:
+    port: 5001
+    command: MEASURE_ENTES -get_data
+    reference_current: 68.75
+  circutor:
+    port: 5002
+    command: MEASURE_CIRCUTOR -get_measurement -current
+    reference_current: 0.03025
+analysis:
+  confidence_level: 0.95
+  bias_tolerance: 0.05
+  visualization:
+    enabled: true
+    plot_types:
+    - timeseries
+    - histogram
+    - comparison
+    - timing
+    directory: sample_results/plots
+result_management:
+  directory: sample_results/runs
+simulation:
+  seed: 42
+  profiles:
+    flaky_network:
+      timeout_probability: 0.1
+      disconnect_probability: 0.05
+    bad_replies:
+      invalid_response_probability: 0.3
+    slow_device:
+      slow_probability: 0.3
+      slow_delay_seconds: 0.15
+    biased_meter:
+      bias_relative: 0.2
+    noisy_spikes:
+      noise_relative: 0.05
+      spike_probability: 0.05
+      spike_factor: 10
+scenarios:
+  quick_check:
+    description: 10 readings from every ammeter
+    sampling:
+      measurements_count: 10
+      sampling_frequency_hz: 10
+  precision_study:
+    description: 200 readings each, for narrow confidence intervals
+    sampling:
+      measurements_count: 200
+      sampling_frequency_hz: 50
+  flaky_network:
+    description: 15% of readings fail with timeouts or dropped connections
+    sampling:
+      total_duration_seconds: 3
+      sampling_frequency_hz: 20
+    simulation: flaky_network
+  bad_replies:
+    description: 30% invalid replies from ENTES
+    ammeters:
+    - entes
+    sampling:
+      measurements_count: 30
+      sampling_frequency_hz: 10
+    simulation: bad_replies
+  slow_device:
+    description: 'CIRCUTOR sometimes answers late: timing overruns'
+    ammeters:
+    - circutor
+    simulation: slow_device
+  biased_meter:
+    description: 'ENTES reads 20% high: the accuracy assessment should find the bias'
+    ammeters:
+    - entes
+    sampling:
+      measurements_count: 400
+      sampling_frequency_hz: 50
+    simulation: biased_meter
+  noisy_spikes:
+    description: noise and occasional 10x spikes
+    sampling:
+      measurements_count: 50
+      sampling_frequency_hz: 20
+    simulation: noisy_spikes
